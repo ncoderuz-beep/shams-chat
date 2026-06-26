@@ -40,7 +40,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <Ctx.Provider value={{ user, profile, loading, refreshProfile: async () => user && loadProfile(user.id) }}>
+    <Ctx.Provider value={{ user, profile, loading, refreshProfile: async () => { if (user) await loadProfile(user.id); } }}>
       {children}
     </Ctx.Provider>
   );
