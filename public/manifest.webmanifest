@@ -1,0 +1,16 @@
+{
+  "name": "Suhbat — Tezkor xabar almashish",
+  "short_name": "Suhbat",
+  "description": "Do'stlaringiz bilan real vaqtda xabar almashing.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0E1621",
+  "theme_color": "#17212B",
+  "lang": "uz",
+  "icons": [
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

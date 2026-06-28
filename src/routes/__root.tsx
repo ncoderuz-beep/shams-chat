@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { AuthProvider } from "../lib/auth";
 import { Toaster } from "@/components/ui/sonner";
+import { PWAInstallPrompt } from "@/components/PWAInstallPrompt";
 
 function NotFoundComponent() {
   return (
@@ -55,20 +56,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
+      { name: "theme-color", content: "#17212B" },
       { title: "Suhbat — Tezkor xabar almashish" },
       { name: "description", content: "Do'stlaringiz bilan real vaqtda xabar almashing." },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+      { name: "apple-mobile-web-app-title", content: "Suhbat" },
       { property: "og:title", content: "Suhbat — Tezkor xabar almashish" },
       { name: "twitter:title", content: "Suhbat — Tezkor xabar almashish" },
       { property: "og:description", content: "Do'stlaringiz bilan real vaqtda xabar almashing." },
       { name: "twitter:description", content: "Do'stlaringiz bilan real vaqtda xabar almashing." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4064dbae-9e77-40d0-8eb0-d1ae303d7c3a/id-preview-82e03c95--d344eb72-5ed5-437a-b63d-0b5e26e83527.lovable.app-1782469341435.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4064dbae-9e77-40d0-8eb0-d1ae303d7c3a/id-preview-82e03c95--d344eb72-5ed5-437a-b63d-0b5e26e83527.lovable.app-1782469341435.png" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "manifest", href: "/manifest.webmanifest" },
+      { rel: "icon", href: "/icon-512.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/icon-512.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" },
@@ -96,6 +102,7 @@ function RootComponent() {
       <AuthProvider>
         <Outlet />
         <Toaster position="top-center" />
+        <PWAInstallPrompt />
       </AuthProvider>
     </QueryClientProvider>
   );
