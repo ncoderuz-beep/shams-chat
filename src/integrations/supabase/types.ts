@@ -111,6 +111,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      email_exists: { Args: { _email: string }; Returns: boolean }
       is_conv_participant: {
         Args: { _conv: string; _uid: string }
         Returns: boolean
