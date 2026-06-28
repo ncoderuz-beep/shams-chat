@@ -39,65 +39,36 @@
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
+/* Telegram dark — default theme */
 :root {
   --radius: 0.75rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.15 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0 0);
-  --primary: oklch(0.68 0.15 230);
+  --background: oklch(0.19 0.025 245);          /* #0E1621-ish */
+  --foreground: oklch(0.97 0 0);
+  --card: oklch(0.235 0.025 245);               /* #17212B */
+  --card-foreground: oklch(0.97 0 0);
+  --popover: oklch(0.235 0.025 245);
+  --popover-foreground: oklch(0.97 0 0);
+  --primary: oklch(0.72 0.16 235);              /* Telegram blue #2AABEE */
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.96 0.005 240);
-  --secondary-foreground: oklch(0.2 0 0);
-  --muted: oklch(0.96 0.005 240);
-  --muted-foreground: oklch(0.5 0.01 240);
-  --accent: oklch(0.94 0.01 230);
-  --accent-foreground: oklch(0.2 0 0);
-  --destructive: oklch(0.6 0.22 27);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.92 0.005 240);
-  --input: oklch(0.92 0.005 240);
-  --ring: oklch(0.68 0.15 230);
-
-  --sidebar-bg: oklch(1 0 0);
-  --chat-bg: oklch(0.92 0.015 100);
-  --bubble-out: oklch(0.93 0.09 140);
-  --bubble-out-fg: oklch(0.2 0 0);
-  --bubble-in: oklch(1 0 0);
-  --bubble-in-fg: oklch(0.15 0 0);
-  --tg-blue: oklch(0.68 0.15 230);
-  --online: oklch(0.72 0.18 145);
-}
-
-.dark {
-  --background: oklch(0.18 0.02 240);
-  --foreground: oklch(0.98 0 0);
-  --card: oklch(0.22 0.02 240);
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.22 0.02 240);
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.68 0.15 230);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.26 0.02 240);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.26 0.02 240);
-  --muted-foreground: oklch(0.7 0.01 240);
+  --secondary: oklch(0.27 0.025 245);
+  --secondary-foreground: oklch(0.97 0 0);
+  --muted: oklch(0.27 0.025 245);
+  --muted-foreground: oklch(0.62 0.015 240);
   --accent: oklch(0.3 0.03 240);
-  --accent-foreground: oklch(0.98 0 0);
+  --accent-foreground: oklch(0.97 0 0);
   --destructive: oklch(0.65 0.2 27);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.3 0.02 240);
-  --input: oklch(0.3 0.02 240);
-  --ring: oklch(0.68 0.15 230);
+  --border: oklch(0.28 0.022 245);
+  --input: oklch(0.28 0.022 245);
+  --ring: oklch(0.72 0.16 235);
 
-  --sidebar-bg: oklch(0.2 0.02 240);
-  --chat-bg: oklch(0.14 0.02 240);
-  --bubble-out: oklch(0.42 0.1 240);
+  --sidebar-bg: oklch(0.235 0.025 245);
+  --chat-bg: oklch(0.19 0.025 245);
+  --bubble-out: oklch(0.45 0.09 245);            /* Telegram sent #2B5278 */
   --bubble-out-fg: oklch(0.98 0 0);
-  --bubble-in: oklch(0.26 0.02 240);
-  --bubble-in-fg: oklch(0.98 0 0);
+  --bubble-in: oklch(0.275 0.025 245);           /* #182533 */
+  --bubble-in-fg: oklch(0.97 0 0);
+  --tg-blue: oklch(0.72 0.16 235);
   --online: oklch(0.72 0.18 145);
 }
 
@@ -115,13 +86,12 @@
 @utility bubble-out {
   background-color: var(--bubble-out);
   color: var(--bubble-out-fg);
-  border-radius: 18px 18px 4px 18px;
+  border-radius: 12px 12px 4px 12px;
 }
 @utility bubble-in {
   background-color: var(--bubble-in);
   color: var(--bubble-in-fg);
-  border-radius: 18px 18px 18px 4px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  border-radius: 12px 12px 12px 4px;
 }
 
 @keyframes msgIn {
@@ -133,12 +103,12 @@
 .chat-bg-pattern {
   background-color: var(--chat-bg);
   background-image:
-    radial-gradient(circle at 20% 30%, rgba(0,0,0,0.03) 1px, transparent 1px),
-    radial-gradient(circle at 70% 80%, rgba(0,0,0,0.03) 1px, transparent 1px);
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.025) 1px, transparent 1px),
+    radial-gradient(circle at 70% 80%, rgba(255,255,255,0.025) 1px, transparent 1px);
   background-size: 32px 32px;
 }
-.dark .chat-bg-pattern {
-  background-image:
-    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.02) 1px, transparent 1px),
-    radial-gradient(circle at 70% 80%, rgba(255,255,255,0.02) 1px, transparent 1px);
-}
+
+/* Scrollbar tweaks */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: oklch(0.32 0.02 245); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: oklch(0.4 0.02 245); }
