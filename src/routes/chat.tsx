@@ -95,7 +95,7 @@ function ChatLayout() {
   }
 
   return (
-    <div className="h-screen flex bg-background overflow-hidden">
+    <div className="dark h-screen flex bg-background overflow-hidden">
       {/* Sidebar */}
       <aside className={`${activeId ? "hidden md:flex" : "flex"} w-full md:w-[340px] border-r flex-col bg-[color:var(--sidebar-bg)]`}>
         {/* Header */}

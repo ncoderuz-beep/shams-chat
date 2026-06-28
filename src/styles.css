@@ -39,16 +39,48 @@
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
-/* Telegram dark — default theme */
+/* Light — default (used on /auth) */
 :root {
   --radius: 0.75rem;
-  --background: oklch(0.19 0.025 245);          /* #0E1621-ish */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.15 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.68 0.15 230);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.96 0.005 240);
+  --secondary-foreground: oklch(0.2 0 0);
+  --muted: oklch(0.96 0.005 240);
+  --muted-foreground: oklch(0.5 0.01 240);
+  --accent: oklch(0.94 0.01 230);
+  --accent-foreground: oklch(0.2 0 0);
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.92 0.005 240);
+  --input: oklch(0.92 0.005 240);
+  --ring: oklch(0.68 0.15 230);
+
+  --sidebar-bg: oklch(1 0 0);
+  --chat-bg: oklch(0.92 0.015 100);
+  --bubble-out: oklch(0.93 0.09 140);
+  --bubble-out-fg: oklch(0.2 0 0);
+  --bubble-in: oklch(1 0 0);
+  --bubble-in-fg: oklch(0.15 0 0);
+  --tg-blue: oklch(0.68 0.15 230);
+  --online: oklch(0.72 0.18 145);
+}
+
+/* Telegram dark — applied to chat */
+.dark {
+  --background: oklch(0.19 0.025 245);
   --foreground: oklch(0.97 0 0);
-  --card: oklch(0.235 0.025 245);               /* #17212B */
+  --card: oklch(0.235 0.025 245);
   --card-foreground: oklch(0.97 0 0);
   --popover: oklch(0.235 0.025 245);
   --popover-foreground: oklch(0.97 0 0);
-  --primary: oklch(0.72 0.16 235);              /* Telegram blue #2AABEE */
+  --primary: oklch(0.72 0.16 235);
   --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.27 0.025 245);
   --secondary-foreground: oklch(0.97 0 0);
@@ -64,12 +96,10 @@
 
   --sidebar-bg: oklch(0.235 0.025 245);
   --chat-bg: oklch(0.19 0.025 245);
-  --bubble-out: oklch(0.45 0.09 245);            /* Telegram sent #2B5278 */
+  --bubble-out: oklch(0.45 0.09 245);
   --bubble-out-fg: oklch(0.98 0 0);
-  --bubble-in: oklch(0.275 0.025 245);           /* #182533 */
+  --bubble-in: oklch(0.275 0.025 245);
   --bubble-in-fg: oklch(0.97 0 0);
-  --tg-blue: oklch(0.72 0.16 235);
-  --online: oklch(0.72 0.18 145);
 }
 
 @layer base {
@@ -92,6 +122,7 @@
   background-color: var(--bubble-in);
   color: var(--bubble-in-fg);
   border-radius: 12px 12px 12px 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
 }
 
 @keyframes msgIn {
@@ -108,7 +139,6 @@
   background-size: 32px 32px;
 }
 
-/* Scrollbar tweaks */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-thumb { background: oklch(0.32 0.02 245); border-radius: 8px; }
-::-webkit-scrollbar-thumb:hover { background: oklch(0.4 0.02 245); }
+::-webkit-scrollbar-thumb { background: oklch(0.7 0.01 240 / 0.5); border-radius: 8px; }
+.dark ::-webkit-scrollbar-thumb { background: oklch(0.4 0.02 245); }
