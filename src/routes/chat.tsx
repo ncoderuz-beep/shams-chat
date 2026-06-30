@@ -109,7 +109,7 @@ function ChatLayout() {
   return (
     <div className={`${dark ? "dark" : ""} h-screen flex bg-background overflow-hidden`}>
       <aside className={`${activeId ? "hidden md:flex" : "flex"} w-full md:w-[360px] border-r flex-col bg-[color:var(--sidebar-bg)]`}>
-        {/* Mobile blue Telegram header */}
+        {/* Mobile blue ShamsChat header */}
         <div className="md:hidden bg-[#5b8aaf] text-white px-3 h-14 flex items-center gap-2 shrink-0">
           <button onClick={() => setDrawerOpen(true)} className="p-2 -ml-1 hover:bg-white/10 rounded-full">
             <Menu className="w-6 h-6" />
@@ -124,7 +124,7 @@ function ChatLayout() {
               className="flex-1 bg-white/15 border-0 text-white placeholder:text-white/70 focus-visible:ring-0 h-9"
             />
           ) : (
-            <div className="flex-1 text-xl font-medium">Telegram</div>
+            <div className="flex-1 text-xl font-medium">ShamsChat</div>
           )}
           <button
             onClick={() => { if (searchOpen) { setSearch(""); setSearchOpen(false); } else setSearchOpen(true); }}
